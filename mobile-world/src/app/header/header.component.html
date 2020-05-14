@@ -1,0 +1,20 @@
+<div class="header">
+    <mat-toolbar color="warn">
+        <span><mat-icon>phone_iphone</mat-icon>Mobile World</span>  
+        <div class="spacer"></div>
+        <div class="topnav" id="myTopnav">
+            <a href="/" mat-button (click)="newSelect('')">Home</a>
+            <a mat-button [matMenuTriggerFor]="menu">Brand</a>
+                <mat-menu #menu="matMenu">
+                    <mat-button mat-menu-item (click)="newSelect('Iphone')">Iphone</mat-button>
+                    <mat-button mat-menu-item (click)="newSelect('Redmi')">Redmi</mat-button>
+                    <mat-button mat-menu-item (click)="newSelect('Vivo')">Vivo</mat-button>
+                    <mat-button mat-menu-item (click)="newSelect('Samsung')">Samsung</mat-button>
+                </mat-menu>
+            
+            <a href="#contact" mat-button>Contact Us</a>
+            <a href="#aboutus" mat-button>About Us</a>
+         
+        </div>
+    </mat-toolbar>
+</div>

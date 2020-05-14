@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="search-div">
+            <input type="text" [(ngModel)]="pattern" class="buscar-txt" placeholder="Type to Search"/>
+            <a class="buscar-btn">
+                <i class="fa fa-search" aria-hidden="true"></i>
+            </a>
+    </div>
+    <div class="space"></div>
+    <div>
+   <ul class="card-list">
+        <li *ngFor = "let mobile of mobiles | mobileSearch:'model':pattern | mobileSearch:'brand':filter;"> 
+        <mat-card>
+             <mat-card-header>
+                <div mat-card-avatar><a href={{mobile.site}}><div mat-card-avatar style="background-image: url({{mobile.logo}});"></div></a></div>
+                 <mat-card-title>{{mobile.model}}</mat-card-title>
+                 <mat-card-subtitle>{{mobile.brand}}</mat-card-subtitle>
+             </mat-card-header>
+             <img mat-card-image src='{{mobile.image}}'>
+             <h2>&#x20b9; {{mobile.price}}</h2>
+             <mat-card-actions>
+                 <a href="{{mobile.amazonlink}}"><button mat-raised-button color="accent">Amzon</button></a>
+                 <div class="button-spcae"></div>
+                 <a href="{{mobile.flipkartlink}}"><button mat-raised-button color="primary">Flipkart</button></a>
+                 <div class="flex-spacer"></div>
+                 <button mat-icon-button (click)="loadColor()"><mat-icon color="{{color}}">favorite</mat-icon></button>
+             </mat-card-actions>
+         </mat-card>
+        </li>    
+    </ul>
+</div>
+</div>
+<section id="contact">
+    
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <div>
+			<form>
+				<span>
+					Send Us A Message
+				</span>
+
+				<div>
+					<input type="text" name="name" placeholder="Full Name">
+		
+				</div>
+
+				<div>
+					<input type="text" name="email" placeholder="E-mail">
+				</div>
+
+				<div>
+					<input type="text" name="phone" placeholder="Phone">
+				</div>
+
+				<div>
+					<textarea name="message" placeholder="Your Message"></textarea>
+				</div>
+
+				<div>
+					<button class="send-button">Send</button>
+				</div>
+			</form>
+        </div>
+      
+    </div>
+
+</section>
+<section id="aboutus">
+    <div class="about-container">
+        <h1>About Us</h1>
+        <span>Mobile World</span><br>
+        <span>Govindharaj T</span><br>
+        <span>6/29,<br>Periyathottam,<br>Somanur,<br>Coimbatore,<br>Pincode - 641668</span>
+    </div>
+</section>
